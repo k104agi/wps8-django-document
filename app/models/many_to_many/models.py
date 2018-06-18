@@ -10,6 +10,7 @@ class Pizza(models.Model):
     name = models.CharField(max_length=50)
     toppings = models.ManyToManyField(
         Topping,
+        related_name='pizzas',
     )
 
     def __str__(self):
