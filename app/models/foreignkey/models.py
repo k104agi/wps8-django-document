@@ -1,6 +1,8 @@
 from django.db import models
 
 
+# Relationships - Many To One 관계 (제조사 현대1개, 자동차 여러대)
+
 class Car(models.Model):
     # 제조사가 먼저 있어야 차를 생성할 수 있음
     manufacturer = models.ForeignKey(
@@ -25,7 +27,7 @@ class Manufacturer(models.Model):
 
 
 # Recursive~ 재귀~ 자기가 자기 클래스를 참조
-class User(models.Model):
+class ForeignKeyUser(models.Model):
     name = models.CharField(max_length=50)
     instructor = models.ForeignKey(
         # foreignkey이지만 self(자기자신)를 참조함
