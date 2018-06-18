@@ -24,6 +24,7 @@ class Manufacturer(models.Model):
         return self.name
 
 
+# Recursive~ 재귀~ 자기가 자기 클래스를 참조
 class User(models.Model):
     name = models.CharField(max_length=50)
     instructor = models.ForeignKey(
@@ -35,5 +36,5 @@ class User(models.Model):
         null=True,
         # null을 허용
         related_name='students',
-        # 관계명을 새로 지정해줌(원래는 소문자이름_set임)
+        # 관계명을 새로 지정해줌(원래는 소문자이름_set임 ex) foo_set)
     )
