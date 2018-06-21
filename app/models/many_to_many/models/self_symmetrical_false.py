@@ -13,7 +13,7 @@ class InstagramUser(models.Model):
     follow = models.ManyToManyField(
         'self',
         symmetrical=False,
-        related_name = 'followers',
+        related_name='followers',
     )
 
     def __str__(self):
